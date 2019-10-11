@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Inscription</title>
+        <link href = "../css/ratchet-theme-android.css" rel = "stylesheet">
+        <link href = "../css/ratchet.css" rel = "stylesheet">
+    </head>
+    <body>
+      <header class="bar bar-nav">
+        <h1 class="title">Inscription</h1>
+      </header>
+      <div class="content">
+        <form class="input-group">
+          <div>
+            <label for="pseudo">Choisissez un pseudo:</label>
+            <input type="text" id="pseudo" name="user_pseudo" required>
+          </div>
+          <div>
+            <label for="name">Numéro de Téléphone:</label>
+            <input type="text" id="phone" name="user_phone" required>
+          </div>
+          <div>
+            <label for="name">Choissiez un mot de passe</label>
+            <input type="text" id="mdp" name="user_mdp" required>
+          </div>
+          <div>
+            <label for="name">Veuillez confirmer votre mot de passe</label>
+            <input type="text" id="mdp_egal" name="user_mdp_again" required>
+          </div>
+          <div class="button">
+            <button id="inscription" class="btn btn-primary btn-block" type="submit">S'inscrire</button>
+          </div>
+        </form>
+    </div>
+    <div class="panel-footer" id="footer_message">
+    </body>
+</html>

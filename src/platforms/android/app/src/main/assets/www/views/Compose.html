@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Réception</title>
+        <link href = "../css/ratchet-theme-android.css" rel = "stylesheet">
+        <link href = "../css/ratchet.css" rel = "stylesheet">
+    </head>
+    <body>
+
+        <!--<footer>-->
+        <nav class="bar bar-tab">
+          <a class="tab-item " id="Pprofile" type = "button">
+            <span class="icon icon-person"></span>
+            <span class="tab-label">Profile</span>
+          </a>
+          <a class="tab-item" id="Preception" type = "button">
+            <span class="icon icon-list"></span>
+            <span class="tab-label">Réception</span>
+          </a>
+          <a class="tab-item active" id="Pcompose" type = "button">
+            <span class="icon icon-compose"></span>
+            <span class="tab-label">Compose</span>
+          </a>
+          <a class="tab-item" id="Pconfiguration" type = "button">
+            <span class="icon icon-gear"></span>
+            <span class="tab-label">Configuration</span>
+          </a>
+        </nav>
+
+
+        <div class="content" style="padding-top: 50px; padding-bottom: 0;">
+          <form class="input-group" method="post">
+            <input type="text" placeholder="Titre" required >
+            <label for="Image">Image :</label>
+            <input type="file" name="image" id="image"/>
+            <textarea rows="10" placeholder="Tapez le texte" required></textarea>
+            <div class="button">
+              <button class="btn btn-primary btn-block" type="submit">Poster</button>
+            </div>
+          </form>
+        </div>
+
+        <!--</footer>-->
+    </body>
+</html>

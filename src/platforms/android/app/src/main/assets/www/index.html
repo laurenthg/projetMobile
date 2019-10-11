@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; media-src *; img-src *;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href = "css/ratchet.css" type="text/css" rel = "stylesheet">
+        <link href = "css/ratchet-theme-android.css" type="text/css" rel = "stylesheet">
+        <title>Jodel</title>
+    </head>
+    <body>
+        <div class="app" id ="chargement">
+            <header class="bar bar-nav" id = "nom_appli" >
+              <h1 class="title">Jodel</h1>
+            </header>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received"></p>
+                <input class="btn btn-primary btn-block" type=button onclick=window.location.href="views/accueil.html"; value="Device is Ready"/>
+               </div>
+            </div>
+
+    <div id="accueil" style= "display: none;">
+
+            <header class="bar bar-nav" id = "nom_appli" >
+              <h1 class="title">Jodel</h1>
+            </header>
+        <div class="content">
+          <img class="welcome"
+              src="img/welcome.jpg"
+              width= "280"
+              height="165 "
+          />
+          <!--  div qui permet le decalage du button au niveau de la rendu visuelle -->
+          <div style="padding-top: 50px; padding-bottom: 0;"></div>
+          <input class="btn btn-primary btn-block"  id="connexion_accueil" type=button  value="Connexion" />
+          <input class="btn btn-positive btn-block btn-outlined" id= "inscription_accueil" type=button  value="Inscription" />
+        </div>
+    </div>
+
+    <div id="connexion" style= "display: none;">
+        <header class="bar bar-nav">
+          <h1 class="title">Connexion</h1>
+        </header>
+        <div class="content">
+          <form class="input-group" method="post" id = "form_connexion">
+            <div>
+              <label for="pseudo">Numéro de téléphone:</label>
+              <input type="text" id="pseudo" name="user_pseudo" required>
+            </div>
+            <div>
+              <label for="name">Mot de passe:</label>
+              <input type="password" id="phone" name="user_phone" required>
+            </div>
+            <div class="button">
+              <button class="btn btn-primary btn-block" id="connexionprofil" type="submit" > Se connecter</button>
+
+            </div>
+          </form>
+      </div>
+  </div>
+
+  <div id="inscription" style = "display: none;">
+      <header class="bar bar-nav">
+        <h1 class="title">Inscription</h1>
+      </header>
+      <div class="content">
+        <form class="input-group" id="form_inscription">
+          <div>
+            <label for="pseudo">Choisissez un pseudo:</label>
+            <input type="text" id="pseudo" name="user_pseudo" required>
+          </div>
+          <div>
+            <label for="name">Numéro de Téléphone:</label>
+            <input type="text" id="phone" name="user_phone" required>
+          </div>
+          <div>
+            <label for="name">Choissiez un mot de passe</label>
+            <input type="text" id="mdp" name="user_mdp" required>
+          </div>
+          <div>
+            <label for="name">Veuillez confirmer votre mot de passe</label>
+            <input type="text" id="mdp_egal" name="user_mdp_again" required>
+          </div>
+          <div class="button">
+            <button id="button_inscription" class="btn btn-primary btn-block" type="submit">S'inscrire</button>
+          </div>
+        </form>
+    </div>
+</div>
+
+<div id="profile" style = "display: none;">
+    <header class="bar bar-nav">
+      <h1 class="title">Profil</h1>
+    </header>
+    <nav class="bar bar-tab">
+      <a class="tab-item active" id="Pprofile" type = "button">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Profile</span>
+      </a>
+      <a class="tab-item" id="Preception" type = "button">
+        <span class="icon icon-list"></span>
+        <span class="tab-label">Réception</span>
+      </a>
+      <a class="tab-item" id="Pcompose" type = "button">
+        <span class="icon icon-compose"></span>
+        <span class="tab-label">Compose</span>
+      </a>
+      <a class="tab-item" id="Pconfiguration" type = "button">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Configuration</span>
+      </a>
+    </nav>
+
+
+    <div class="bar-tab">
+      <div class="content" style="padding-top: 50px; padding-bottom: 0;">
+          <h1 style="padding-top: 25px; padding-bottom: 0;">About Me</h1>
+          <div id="Profile_pseudo">Pseudo : TODO </div>
+          <div id="Profile_tel">Téléphone: TODO</div>
+          <div class="myApp">
+             <div id="map_canvas" ></div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div id="reception" style = "display: none;">
+    <header class="bar bar-nav">
+      <h1 class="title">Reception</h1>
+    </header>
+    <nav class="bar bar-tab">
+      <a class="tab-item" id="Pprofile" type = "button">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Profile</span>
+      </a>
+      <a class="tab-item active" id="Preception" type = "button">
+        <span class="icon icon-list"></span>
+        <span class="tab-label">Réception</span>
+      </a>
+      <a class="tab-item" id="Pcompose" type = "button">
+        <span class="icon icon-compose"></span>
+        <span class="tab-label">Compose</span>
+      </a>
+      <a class="tab-item" id="Pconfiguration" type = "button">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Configuration</span>
+      </a>
+    </nav>
+
+  <div class="bar-tab">
+  <div class="content" style="padding-top: 50px; padding-bottom: 0;" >
+    <ul class="table-view" id = "message">
+
+    </ul>
+  </div>
+  </div>
+</div>
+
+<div id="compose" style = "display: none;">
+    <header class="bar bar-nav">
+      <h1 class="title">Compose</h1>
+    </header>
+    <nav class="bar bar-tab">
+      <a class="tab-item " id="Pprofile" type = "button">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Profile</span>
+      </a>
+      <a class="tab-item" id="Preception" type = "button">
+        <span class="icon icon-list"></span>
+        <span class="tab-label">Réception</span>
+      </a>
+      <a class="tab-item active" id="Pcompose" type = "button">
+        <span class="icon icon-compose"></span>
+        <span class="tab-label">Compose</span>
+      </a>
+      <a class="tab-item" id="Pconfiguration" type = "button">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Configuration</span>
+      </a>
+    </nav>
+
+
+    <div class="content" style="padding-top: 50px; padding-bottom: 0;">
+      <form class="input-group" id= "form_envoie">
+          <div>
+            <label for="name">Veuillez entrer un titre</label>
+            <input type="text" id="messageTitre" name="user_phone" required>
+        </div>
+        <div>
+            <label for="name">Veuillez entrer votre message</label>
+            <input type="text" id="messagecorps" name="user_phone" required>
+        </div>
+        <div class="button">
+          <button class="btn btn-primary btn-block" id ="envoie_message" type="submit">Poster</button>
+        </div>
+      </form>
+    </div>
+</div>
+
+<div id="configuration" style = "display: none;">
+    <header class="bar bar-nav">
+      <h1 class="title">Configuration</h1>
+    </header>
+    <nav class="bar bar-tab">
+      <a class="tab-item " id="Pprofile" type = "button">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Profile</span>
+      </a>
+      <a class="tab-item" id="Preception" type = "button">
+        <span class="icon icon-list"></span>
+        <span class="tab-label">Réception</span>
+      </a>
+      <a class="tab-item" id="Pcompose" type = "button">
+        <span class="icon icon-compose"></span>
+        <span class="tab-label">Compose</span>
+      </a>
+      <a class="tab-item active" id="Pconfiguration" type = "button">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Configuration</span>
+      </a>
+    </nav>
+
+      <div class="content"  style="padding-top: 50px; padding-bottom: 0;">
+      <form class="input-group"  id = "form_changement">
+        <div>
+          <label for="name">Veuillez entrer votre numéro de Téléphone</label>
+          <input type="text" id="phone" name="user_phone" required>
+        </div>
+        <div>
+          <label for="name">Veuillez entrer votre ancien mot de passe</label>
+          <input type="password" id="ancien_mdp" name="ancien_mdp" required>
+        </div>
+        <div>
+          <label for="name">Veuillez entrer votre nouveau mot de passe</label>
+          <input type="password" id="nouveau_mdp" name="nouveau_mdp" required>
+        </div>
+        <div>
+          <label for="name">Veuillez confirmer votre mot de passe</label>
+          <input type="password" id="confirmation_mdp" name="confirmation_mdp" required>
+        </div>
+        <div class="button">
+          <button id="changemdp" class="btn btn-primary btn-block" type="submit">Changer de mot de passe</button>
+        </div>
+      </form>
+  </div>
+</div>
+
+        <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+        <script type="text/javascript" src="js/ratchet.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text.javascript" src="js/mustache.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+    </body>
+</html>

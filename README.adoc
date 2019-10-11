@@ -1,0 +1,28 @@
+= Projet Application web et mobiles
+
+:imagesDir: docs/images
+
+
+ifndef::env-github[]
+image::authentification.png[width="600"]
+endif::[]
+
+
+Set up:
+
+* Configuration de cordova
+* Configuration de la base de donnée dans src/db/setting.js ( progreSQL utilisé dans notre cas)
+
+Application simplifiée de messagerie géolocalisée: un utilisateur envoie un message de manière anonyme aux autres utilisateurs présents dans sa liste de contacts et situés à une certaine distance de lui.
+
+Perspectives futures possibles:
+
+* Ajout d'un google maps pour repérer les utilisateurs de sa liste de contact
+* Envoie des messages vocales et des messages avec des images
+
+Projet réalisé par :
+
+* Tanguy GLOAGUEN
+* Jérôme HUANG
+* Laurent HUANG
+* Mario Nicolas VALENZUELA
